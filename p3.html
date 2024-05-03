@@ -1,0 +1,25 @@
+<script>
+var arr = [1,2,3,4,5,6];
+// arr.map(()=>{})
+// arr.calculate(square)
+const square = function(val){
+  return val * val;
+}
+const cube = function(val){
+    return val * val * val;
+}
+const four = function(val){
+    return val * val * val * val;
+}
+Array.prototype.calculate = function(logic){
+    let result = [];
+    for(let index in this){
+       result.push(logic(this[index]));
+    }
+    return result;
+}
+console.log(arr.calculate(square));
+console.log(arr.calculate(cube));
+console.log(arr.calculate(four));
+//console.log(arr);
+</script>
